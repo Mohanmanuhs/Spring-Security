@@ -10,7 +10,9 @@ import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
 public class WebSecurityConfig {
-
+    //crsf disable :- By disabling CSRF protection, you make your application vulnerable to CSRF attacks. This means that any authenticated user could potentially be tricked into performing unintended actions.
+   //we put authenticate to getBalance page means user name and password required
+   //permitAll to home page means no need of authentication
     @Bean
     SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.csrf((csrf)->csrf.disable())
@@ -24,6 +26,7 @@ public class WebSecurityConfig {
 
 
   */
+    //to deny any request by user
 /*  @Bean
     SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.authorizeHttpRequests((request)->request.anyRequest().denyAll())
@@ -34,6 +37,7 @@ public class WebSecurityConfig {
 
 
      */
+//to permit any requeset
 /*   @Bean
     SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.authorizeHttpRequests((request)->request.anyRequest().permitAll())
