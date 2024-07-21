@@ -29,7 +29,7 @@ public class WebSecurityConfig {
         return NoOpPasswordEncoder.getInstance();
     }
 */
-
+    //changing password encoder
     @Bean
     public PasswordEncoder passwordEncoder()
     {
